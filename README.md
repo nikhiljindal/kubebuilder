@@ -89,7 +89,7 @@ kubebuilder create resource --group mygroup --version v1beta1 --kind MyKind
 
 ### pkg/controllers
 
-**Users must edit packages under this package**
+**Users must packages under this package**
 
 The `controllers` package contains the controllers to implement the resource APIs.  Controllers are defined under
 `pkg/controllers/<kind>/controller.go`.  Controllers may be annotated with comments to wire the controller into the
@@ -240,14 +240,14 @@ In order to watch objects created by a controller and reconcile the owning resou
 to lookup the ancestors object must be provided (e.g. lookup a ReplicaSet for a namespace/name,
 lookup a Deployment for a namespace/name).
 
-You may have you controller watch a resource created by the controller and then reconcile the owning object by
+You may have the controller watch a resource created by the controller and then reconcile the owning object by
 following this example:
 
 [GenericController.WatchControllerOf](https://godoc.org/github.com/kubernetes-sigs/kubebuilder/pkg/controller#example-GenericController-WatchControllerOf)
 
 [Sample](https://github.com/kubernetes-sigs/kubebuilder/blob/master/samples/controller/controller.go#L91)
 
-#### Watching arbitrary resources and mapping them so the are reconciled in the controller
+#### Watching arbitrary resources and mapping them so they are reconciled in the controller
 
 In some cases it may be necessary to watch resources not owned or created by your controller, but respond to them.
 An example would be taking some action in response to the deletion or creation of Nodes in the cluster.  To do
